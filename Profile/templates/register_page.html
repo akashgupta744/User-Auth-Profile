@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  <title>register</title>
+{% endblock %}
+
+{% block header %}
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">Profile</a>
+        </nav>
+    </header>
+{% endblock %}  
+
+{% block main %}
+
+<main class="main-container">
+  <div class="container ">
+    <h1 class="signup-heading">Sign Up</h1>
+    <div class="user-content-container user-profile-form-container">
+      <form action="" method="POST">
+        {% csrf_token %}
+        
+        <ul>
+          <li class="name">
+               
+              <label for="username">Username</label>
+              {{UFO.username.errors}}
+              {{UFO.username}}
+          </li>
+
+          <li class="email">
+            <label for="">Email</label>
+            {{UFO.email.errors}}
+            {{UFO.email}}
+          </li>
+
+          <li class="pass">
+            <label for="">Password</label>
+            {{UFO.password1.errors}}
+            {{UFO.password1}}
+          </li>
+
+          <li class="confirm-pass">
+            <label for="">Confirm Password</label>
+            {{UFO.password2.errors}}
+            {{UFO.password2}}
+          </li>
+          <li class="confirm-pass">
+            <label for="">Phone No.</label>
+            {{PFO.phone_no.errors}}
+            {{PFO.phone_no}}
+          </li>
+        
+      </ul>
+    
+
+      <button type="submit" class="signup-button">Sign up</button>
+      <p class="login-link">already have an account?? <a href="{% url 'login_page' %}">Sign In</a></p>
+
+
+  </div>
+  </div>
+</main>
+{% endblock %}

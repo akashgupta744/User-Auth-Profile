@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>login</title>
+{% endblock %}
+
+{% block header %}
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">Profile</a>
+        </nav>
+    </header>
+{% endblock %}  
+
+{% block main %}
+        <main class="main-container">
+            <div class="container ">
+            <h1 class="signup-heading">Log in</h1>
+                <div class="user-content-container user-profile-form-container">
+                <form action="" method="POST">
+                    {% csrf_token  %}
+                    <ul>
+                    <li class="name">
+                        <label for="un">Username</label>
+                        <input type="text" name="username" id="username" class="username-input" placeholder="Enter Username">
+                    </li>
+
+                    <li class="pass">
+                        <label for="pw">Password</label>
+                        <input type="password" name="password" id="password" class="password-input" placeholder="Enter password">
+                    </li>
+        
+                        <button type="submit"  class="signup-button"> Log in </button>
+                        <p class="login-link">Don't have an account?? <a href="{% url 'register_page' %}">Sign Up</a></p>
+                    </ul>
+                </form>
+
+                </div>
+            </div>
+        </main>
+
+{% endblock %}
